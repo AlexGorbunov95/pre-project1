@@ -41,14 +41,14 @@ public class Util {
 
                 properties.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
 
-                properties.put(Environment.HBM2DDL_AUTO, "create-drop");
+                // properties.put(Environment.HBM2DDL_AUTO, "create-drop");
 
                 configuration.setProperties(properties);
                 configuration.addAnnotatedClass(User.class);
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
 
                 sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-                System.out.println("Connection ok");
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
