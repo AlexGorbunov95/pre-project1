@@ -15,33 +15,36 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
 
-        SessionFactory sessionFactory=Util.hibernateOpen();
+        SessionFactory sessionFactory = Util.hibernateOpen();
         UserServiceImpl userService = new UserServiceImpl();
 
+        Session session = null;
         try {
-            Session session = sessionFactory.getCurrentSession();
-            session.beginTransaction();
+            session = sessionFactory.getCurrentSession();
 
-//            userService.saveUser("Alexey", "Gorbunov", (byte) 28);
-//            userService.saveUser("Ivan", "Ivanov", (byte) 32);
-//            userService.saveUser("Petr", "Petrov", (byte) 20);
-//            userService.saveUser("Olga", "Abdullaeva", (byte) 26);
+            userService.createUsersTable();
 
-           // userService.getAllUsers();
+            userService.saveUser("Alexey", "Gorbunov", (byte) 28);
+            userService.saveUser("Ivan", "Ivanov", (byte) 32);
+            userService.saveUser("Petr", "Petrov", (byte) 20);
+            userService.saveUser("Olga", "Abdullaeva", (byte) 26);
+
+            userService.getAllUsers();
 
             //userService.removeUserById(2);
-            //userService.cleanUsersTable();
+
+            userService.cleanUsersTable();
+
+            userService.dropUsersTable();
+
             session.getTransaction().commit();
-        }
-        catch (Exception e){
+
+        } catch (Exception e) {
+            session.getTransaction().rollback();
             e.printStackTrace();
-        }
-       finally {
+        } finally {
             sessionFactory.close();
         }
-
-
-
 
 
 //                Connection connection = Util.open();
@@ -82,8 +85,8 @@ public class Main {
 //                e.printStackTrace();
 //            }
 //        }
-//
-   }
+
+    }
 
 
 }

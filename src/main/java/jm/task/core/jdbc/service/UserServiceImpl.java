@@ -8,24 +8,25 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    UserDaoHibernateImpl userDaoHibernate=new UserDaoHibernateImpl();
+    UserDaoHibernateImpl userDaoHibernate = new UserDaoHibernateImpl();
     UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
 
     public void createUsersTable() throws SQLException {
-        userDaoJDBC.createUsersTable();
+        //userDaoJDBC.createUsersTable();
+        userDaoHibernate.createUsersTable();
         System.out.println("createUsersTable OK");
 
     }
 
     public void dropUsersTable() throws SQLException {
-        userDaoJDBC.dropUsersTable();
+        //userDaoJDBC.dropUsersTable();
+        userDaoHibernate.dropUsersTable();
         System.out.println("dropUsersTable OK");
     }
 
     public void saveUser(String name, String lastName, byte age) throws SQLException {
-        User user = new User();
-        userDaoHibernate.saveUser(name,lastName,age);
-  //    userDaoJDBC.saveUser(name, lastName, age);
+        //userDaoJDBC.saveUser(name, lastName, age);
+        userDaoHibernate.saveUser(name, lastName, age);
         System.out.println("User с именем " + name + " добавлен в базу данных");
 
     }
@@ -37,12 +38,12 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<User> getAllUsers() throws SQLException {
-       // return userDaoJDBC.getAllUsers();
-       return userDaoHibernate.getAllUsers();
+        //return userDaoJDBC.getAllUsers();
+        return userDaoHibernate.getAllUsers();
     }
 
     public void cleanUsersTable() throws SQLException {
-        //userDaoJDBC.cleanUsersTable();
+        // userDaoJDBC.cleanUsersTable();
         userDaoHibernate.cleanUsersTable();
         System.out.println("cleanUsersTable OK");
 

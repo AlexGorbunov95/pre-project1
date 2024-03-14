@@ -41,7 +41,9 @@ public class Util {
 
                 properties.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
 
-                // properties.put(Environment.HBM2DDL_AUTO, "create-drop");
+                properties.put(Environment.AUTOCOMMIT, "false");
+
+                properties.put(Environment.HBM2DDL_AUTO, "");
 
                 configuration.setProperties(properties);
                 configuration.addAnnotatedClass(User.class);
@@ -57,7 +59,7 @@ public class Util {
     }
 
 
-        public static Connection open() {
+    public static Connection open() {
         Connection connection = null;
         try {
             Class.forName(driver);
