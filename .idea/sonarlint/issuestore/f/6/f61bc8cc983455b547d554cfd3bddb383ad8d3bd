@@ -1,4 +1,28 @@
 
+k
+java:S2259 "IA "NullPointerException" could be thrown; "transaction" is nullable here.(ì‚—ôúÿÿÿÿ8’û±áå1
+k
+java:S2259."IA "NullPointerException" could be thrown; "transaction" is nullable here.(ì‚—ôúÿÿÿÿ8û±áå1
+k
+java:S2259?"IA "NullPointerException" could be thrown; "transaction" is nullable here.(ì‚—ôúÿÿÿÿ8û±áå1
+k
+java:S2259`"IA "NullPointerException" could be thrown; "transaction" is nullable here.(ì‚—ôúÿÿÿÿ8û±áå1
+k
+java:S2259N"IA "NullPointerException" could be thrown; "transaction" is nullable here.(ì‚—ôúÿÿÿÿ8û±áå1
+k
+java:S2259o"IA "NullPointerException" could be thrown; "transaction" is nullable here.(ì‚—ôúÿÿÿÿ8Œû±áå1
 £
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(âÚ­¬şÿÿÿÿ8İ—Èå1
-G	java:S106\"+Replace this use of System.out by a logger.(Âæ“ú8ŸÅœÈå1
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(âÚ­¬şÿÿÿÿ8–û±áå1
+[
+java:S1874"9Remove this use of "getSessionFactory"; it is deprecated.(åö¼ñúÿÿÿÿ8¡û±áå1
+[
+java:S1874)"9Remove this use of "getSessionFactory"; it is deprecated.(åö¼ñúÿÿÿÿ8°û±áå1
+[
+java:S1874:"9Remove this use of "getSessionFactory"; it is deprecated.(åö¼ñúÿÿÿÿ8Ëû±áå1
+[
+java:S1874H"9Remove this use of "getSessionFactory"; it is deprecated.(åö¼ñúÿÿÿÿ8Ûû±áå1
+[
+java:S1874X"9Remove this use of "getSessionFactory"; it is deprecated.(åö¼ñúÿÿÿÿ8¨ü±áå1
+G	java:S106\"+Replace this use of System.out by a logger.(Âæ“ú8ø¦²áå1
+[
+java:S1874j"9Remove this use of "getSessionFactory"; it is deprecated.(åö¼ñúÿÿÿÿ8½ü±áå1
