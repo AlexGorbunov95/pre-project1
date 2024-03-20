@@ -9,17 +9,14 @@ import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
 
-    Connection connection = Util.open();
-
-
+    private Connection connection = Util.open();
 
 
     public UserDaoJDBCImpl() {
 
     }
 
-
-    public void createUsersTable() throws SQLException {
+    public void createUsersTable() {
         Statement statement = null;
         String sql = "CREATE TABLE IF NOT EXISTS users(" +
                 "id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT," +
@@ -31,13 +28,17 @@ public class UserDaoJDBCImpl implements UserDao {
             statement.execute(sql);
             connection.commit();
         } catch (Exception e) {
-            connection.rollback();
+            try {
+                connection.rollback();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
             e.printStackTrace();
         }
 
     }
 
-    public void dropUsersTable() throws SQLException {
+    public void dropUsersTable() {
         String sql1 = "DROP TABLE IF EXISTS users ";
         Statement statement = null;
         try {
@@ -45,13 +46,17 @@ public class UserDaoJDBCImpl implements UserDao {
             statement.executeUpdate(sql1);
             connection.commit();
         } catch (SQLException e) {
-            connection.rollback();
+            try {
+                connection.rollback();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
             e.printStackTrace();
         }
 
     }
 
-    public void saveUser(String name, String lastName, byte age) throws SQLException {
+    public void saveUser(String name, String lastName, byte age) {
         User user = new User();
         user.setName(name);
         user.setLastName(lastName);
@@ -70,12 +75,16 @@ public class UserDaoJDBCImpl implements UserDao {
             preparedStatement.executeUpdate();
             connection.commit();
         } catch (Exception e) {
-            connection.rollback();
+            try {
+                connection.rollback();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
             e.printStackTrace();
         }
     }
 
-    public void removeUserById(long id) throws SQLException {
+    public void removeUserById(long id) {
         User user = new User();
         user.setId(id);
         PreparedStatement preparedStatement = null;
@@ -86,13 +95,17 @@ public class UserDaoJDBCImpl implements UserDao {
             preparedStatement.executeUpdate();
             connection.commit();
         } catch (Exception e) {
-            connection.rollback();
+            try {
+                connection.rollback();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
             e.printStackTrace();
         }
 
     }
 
-    public List<User> getAllUsers() throws SQLException {
+    public List<User> getAllUsers() {
         List<User> list = new ArrayList<>();
         User user = new User();
         String sql1 = "SELECT id, name, lastName, age FROM users";
@@ -110,14 +123,18 @@ public class UserDaoJDBCImpl implements UserDao {
             }
             connection.commit();
         } catch (Exception e) {
-            connection.rollback();
+            try {
+                connection.rollback();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
             e.printStackTrace();
         }
 
         return list;
     }
 
-    public void cleanUsersTable() throws SQLException {
+    public void cleanUsersTable() {
         String sql1 = "TRUNCATE TABLE users";
         Statement statement = null;
         try {
@@ -125,7 +142,11 @@ public class UserDaoJDBCImpl implements UserDao {
             statement.executeUpdate(sql1);
             connection.commit();
         } catch (Exception e) {
-            connection.rollback();
+            try {
+                connection.rollback();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
             e.printStackTrace();
         }
 

@@ -1,16 +1,4 @@
 
-b
-java:S2259V"EA "NullPointerException" could be thrown; "session" is nullable here.(ïÚÊÕ8Ïåö•å1
-b
-java:S22594"EA "NullPointerException" could be thrown; "session" is nullable here.(ïÚÊÕ8—Í÷•å1
-b
-java:S2259F"EA "NullPointerException" could be thrown; "session" is nullable here.(ïÚÊÕ8Îåö•å1
-b
-java:S2259%"EA "NullPointerException" could be thrown; "session" is nullable here.(ïÚÊÕ8Ïåö•å1
-b
-java:S2259i"EA "NullPointerException" could be thrown; "session" is nullable here.(ïÚÊÕ8ã¡†–å1
-b
-java:S2259y"EA "NullPointerException" could be thrown; "session" is nullable here.(ïÚÊÕ8Îåö•å1
 £
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(âÚ­¬şÿÿÿÿ8Ñåö•å1
-G	java:S106e"+Replace this use of System.out by a logger.(Âæ“ú8ãåö•å1
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(âÚ­¬şÿÿÿÿ8İ—Èå1
+G	java:S106\"+Replace this use of System.out by a logger.(Âæ“ú8ŸÅœÈå1
